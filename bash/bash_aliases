@@ -1,0 +1,35 @@
+####
+# `General Aliases
+####
+alias a=alias
+
+## ls ##
+a ls='ls --color=auto'
+a la='ls -a'
+a ll='ls -al'
+a l.='ls -d .* --color=auto'
+
+## cd ##
+a cd..='cd ..'
+a ..='cd ..'
+a ...='cd ../../'
+
+a .1='cd ../'
+a .2='cd ../../'
+a .3='cd ../../../'
+a .4='cd ../../../../'
+a .5='cd ../../../../..'
+
+## grep ##
+## Colorize the grep command output for ease of use (good for log files)##
+a grep='grep --color=auto'
+a egrep='egrep --color=auto'
+a fgrep='fgrep --color=auto'
+
+
+## editing ##
+a vi=vim
+a edit=vim
+
+
+unalias a

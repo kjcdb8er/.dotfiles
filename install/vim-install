@@ -1,0 +1,12 @@
+## Replace home directory bash files with symlinks to files in .dotfiles
+## Any changes to these files will be version controled in the git dotfiles 
+
+# get root directory
+df_fir='pwd'
+
+[ -e ~/.vim ] || [ -h ~/.vim ] && rm -rf ~/.vim
+ln -s ~/.dotfiles/vim ~/.vim 
+echo "Installed .vim"
+
+
+echo "vim-install complete"

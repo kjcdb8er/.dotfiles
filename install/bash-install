@@ -1,0 +1,15 @@
+## Replace home directory bash files with symlinks to files in .dotfiles
+## Any changes to these files will be version controled in the git dotfiles 
+
+# get root directory
+df_fir='pwd'
+
+[ -e ~/.bashrc ] || [ -h ~/.bashrc ] && rm ~/.bashrc
+ln -s ~/.dotfiles/bash/bashrc ~/.bashrc 
+echo "Installed .bashrc"
+
+[ -e ~/.bash_aliases ] || [ -h ~/.bash_aliases ] && rm ~/.bash_aliases
+ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
+echo "Installed .bash_aliases"
+
+echo "bash-install complete"

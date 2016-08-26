@@ -1,0 +1,34 @@
+" kjcdb8er's universal vimrc
+set bs=2		" allow backspacing over everything in insert mode
+set history=500		" keep 50 lines of command line history
+set ruler		" show the cursor position all the time
+
+" styles
+colo desert             " favored color schemes: desert, molokai, wombat
+
+filetype off          " necessary to make ftdetect work on Linux
+syntax on
+filetype on           " Enable filetype detection
+filetype indent on    " Enable filetype-specific indenting
+
+set hlsearch		" Search highlighting
+set showmatch		" Cursor shows matching ) and }
+set showmode		" Show current mode
+
+" ignore these files while expanding wild chars
+set wildignore=*.o,*.class,*.pyc
+
+set autoindent		" auto indentation
+set incsearch		" incremental search
+set nobackup		" no *~ backup files
+set copyindent		" copy the previous indentation on autoindenting
+set ignorecase		" ignore case when searching
+set smartcase		" ignore case if search pattern is all lowercase,case-sensitive otherwise
+set smarttab		" insert tabs on the start of a line according to context
+set nowrap
+
+" disable sound on errors
+set noerrorbells
+set novisualbell
+set t_vb=
+set tm=500
