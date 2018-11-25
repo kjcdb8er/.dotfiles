@@ -10,24 +10,25 @@ set pastetoggle=<F2>
 set clipboard=unnamed
 
 " Better Editing
-set bs=2		          " allow backspacing over everything in insert mode
-set history=500		    " keep 500 lines of command line history
-set undolevels=500    " super undo
-set ruler		          " show the cursor position all the time
-set mouse=a           " Use the mouse in visual mode
-set nowrap            " keep content on one line
+set bs=2		                    " allow backspacing over everything in insert mode
+set history=500		                " keep 500 lines of command line history
+set undolevels=500                  " super undo
+set ruler		                    " show the cursor position all the time
+set number                          " Show line numbers
+set mouse=a                         " Use the mouse in visual mode
+set nowrap                          " keep content on one line
 
 set tabstop=4
 set softtabstop=4
 set shiftwidth=4
 set shiftround
 set expandtab
-"" set copyindent		              " copy the previous indentation on autoindenting
+"" set copyindent		            " copy the previous indentation on autoindenting
 
 set showmode		                " Show current mode
 
-vnoremap < <gv     " indentation retaining block selection
-vnoremap > >gv     " "
+vnoremap < <gv                      " indentation retaining block selection
+vnoremap > >gv                      "
 
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
@@ -35,10 +36,10 @@ autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Better Navigation
-map <c-j> <c-w>j                " move to next window, up
-map <c-k> <c-w>k                " move to next window, down
-map <c-l> <c-w>l                " move to next window, right
-map <c-h> <c-w>h                " move to next window, left
+map <c-j> <c-w>j                    " move to next window, up
+map <c-k> <c-w>k                    " move to next window, down
+map <c-l> <c-w>l                    " move to next window, right
+map <c-h> <c-w>h                    " move to next window, left
 
 map <Leader>n <esc>:tabprevious<CR>   " navigate tabs
 map <Leader>m <esc>:tabnext<CR>
@@ -46,27 +47,27 @@ map <Leader>m <esc>:tabnext<CR>
 " styles
 " mkdir -p ~/.vim/colors && cd ~/.vim/colors
 " wget -O desert.vim https://raw.githubusercontent.com/fugalh/desert.vim/master/colors/desert.vim
-colorscheme desert              " favored color schemes: desert, molokai, wombat
+colorscheme desert                  " favored color schemes: desert, molokai, wombat
 
-filetype off                    " necessary to make ftdetect work on Linux
-filetype plugin indent on       " Enable filetype-specific indenting
+filetype off                        " necessary to make ftdetect work on Linux
+filetype plugin indent on           " Enable filetype-specific indenting
 syntax on
 
 " Better Search
 set hlsearch		                " Search highlighting
 set showmatch		                " Cursor shows matching ) and }
-noremap <C-n> :nohl<CR>         " bind no-highlight command to Ctrl-n
+noremap <C-n> :nohl<CR>             " bind no-highlight command to Ctrl-n
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
-set autoindent		              " auto indentation
+set autoindent		                " auto indentation
 set incsearch		                " incremental search
-set ignorecase		              " ignore case when searching
+set ignorecase		                " ignore case when searching
 set smartcase		                " ignore case if search pattern is all lowercase,case-sensitive otherwise
 
 " External File Settings
-set wildignore=*.o,*.class,*.pyc        " ignore these files while expanding wild chars
-set nobackup		                        " no *~ backup files
+set wildignore=*.o,*.class,*.pyc    " ignore these files while expanding wild chars
+set nobackup		                " no *~ backup files
 set nowritebackup
 set noswapfile
 
@@ -77,8 +78,8 @@ set t_vb=
 set tm=500
 
 " Extended (Leader mode) Commands
-let mapleader = ","                         " Rebind <Leader> key to convenient spot
-vnoremap <Leader>s  :sort<CR>               " Shortcut for sort function in visual mode
+let mapleader = ","                  " Rebind <Leader> key to convenient spot
+vnoremap <Leader>s  :sort<CR>        " Shortcut for sort function in visual mode
 
 
 " ============================================================================
