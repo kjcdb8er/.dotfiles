@@ -25,6 +25,9 @@ set shiftround
 set expandtab
 "" set copyindent		            " copy the previous indentation on autoindenting
 
+set colorcolumn=110
+highlight ColorColumn ctermbg=darkgray
+
 set showmode		                " Show current mode
 
 vnoremap < <gv                      " indentation retaining block selection
