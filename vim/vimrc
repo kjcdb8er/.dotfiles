@@ -1,7 +1,7 @@
 " kjcdb8er's universal vimrc
 
 " Automatic reloading of .vimrc
-autocmd! bufwritepost .vimrc source %
+autocmd! bufwritepost vimrc source %
 
 " Better copy & paste
 " When you want to paste large blocks of code into vim, press F2 before you
@@ -25,17 +25,18 @@ set shiftround
 set expandtab
 "" set copyindent		            " copy the previous indentation on autoindenting
 
-set colorcolumn=110
-highlight ColorColumn ctermbg=darkgray
 
 set showmode		                " Show current mode
 
 vnoremap < <gv                      " indentation retaining block selection
 vnoremap > >gv                      "
 
+
 " Show whitespace
 " MUST be inserted BEFORE the colorscheme command
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=red guibg=red
+set colorcolumn=110
+autocmd ColorScheme * highlight ColorColumn ctermbg=darkgrey
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgrey guibg=red
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Better Navigation
@@ -52,6 +53,7 @@ map <Leader>m <esc>:tabnext<CR>
 " wget -O desert.vim https://raw.githubusercontent.com/fugalh/desert.vim/master/colors/desert.vim
 colorscheme desert                  " favored color schemes: desert, molokai, wombat
 
+
 filetype off                        " necessary to make ftdetect work on Linux
 filetype plugin indent on           " Enable filetype-specific indenting
 syntax on
@@ -59,7 +61,7 @@ syntax on
 " Better Search
 set hlsearch		                " Search highlighting
 set showmatch		                " Cursor shows matching ) and }
-noremap <C-n> :nohl<CR>             " bind no-highlight command to Ctrl-n
+nnoremap <C-n> :nohl<CR>            " bind no-highlight command to Ctrl-n
 vnoremap <C-n> :nohl<CR>
 inoremap <C-n> :nohl<CR>
 
@@ -73,7 +75,7 @@ set wildignore=*.o,*.class,*.pyc    " ignore these files while expanding wild ch
 set nobackup		                " no *~ backup files
 set nowritebackup
 set noswapfile
-
+    
 " disable sound on errors
 set noerrorbells
 set novisualbell
@@ -83,6 +85,10 @@ set tm=500
 " Extended (Leader mode) Commands
 let mapleader = ","                  " Rebind <Leader> key to convenient spot
 vnoremap <Leader>s  :sort<CR>        " Shortcut for sort function in visual mode
+
+noremap <C-Y> "+y                   " Copy to clipboard
+noremap <C-V> "+p                   " Paste from clipboard
+noremap <C-V> "+p                   " Paste from clipboard
 
 
 " ============================================================================
