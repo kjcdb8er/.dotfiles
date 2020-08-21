@@ -36,7 +36,7 @@ vnoremap > >gv                      "
 " MUST be inserted BEFORE the colorscheme command
 set colorcolumn=110
 autocmd ColorScheme * highlight ColorColumn ctermbg=darkgrey
-autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgrey guibg=red
+autocmd ColorScheme * highlight ExtraWhitespace ctermbg=darkgrey guibg=darkgrey
 au InsertLeave * match ExtraWhitespace /\s\+$/
 
 " Better Navigation
@@ -92,5 +92,15 @@ noremap <C-V> "+p                   " Paste from clipboard
 
 
 " ============================================================================
-" Python IDE Setup
+" C IDE Setup
 " ============================================================================
+"
+"Tell vim .h files are c, not c++
+augroup project
+  autocmd!
+  autocmd BufRead,BufNewFile *.h,*.c set filetype=c.doxygen
+augroup END
+
+nnoremap <F3> :make clean<cr>
+nnoremap <F4> :w <bar> :make!<cr>
+nnoremap <F5> :w <bar> :make clean<cr> <bar> :make!<cr>
