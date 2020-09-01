@@ -87,8 +87,8 @@ let mapleader = ","                  " Rebind <Leader> key to convenient spot
 vnoremap <Leader>s  :sort<CR>        " Shortcut for sort function in visual mode
 
 noremap <C-Y> "+y                   " Copy to clipboard
-noremap <C-V> "+p                   " Paste from clipboard
-noremap <C-V> "+p                   " Paste from clipboard
+"noremap <C-V> "+p                   " Paste from clipboard
+"noremap <C-V> "+p                   " Paste from clipboard
 
 
 " ============================================================================
