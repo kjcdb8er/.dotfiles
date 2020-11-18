@@ -96,6 +96,33 @@ alias l='ls -CF'
 #   sleep 10; alert
 alias alert='notify-send --urgency=low -i "$([ $? = 0 ] && echo terminal || echo error)" "$(history|tail -n1|sed -e '\''s/^\s*[0-9]\+\s*//;s/[;&|]\s*alert$//'\'')"'
 
+# Python Development Environment
+# Virtualenv shortcuts
+alias vactivate="source .venv/bin/activate"
+function ve_new {
+    # Expect one argument: the name of the new virtual environment. 
+    # Otherwise, call the standard function.
+
+    if [ "$#" -ne 1 ]; then
+        echo "New VirtualEnv: unsupported arguments. Passing through transparently." >&2
+        virtualenv "$@"
+        return $?
+    fi
+
+    echo "New VirtialEnv: virtualenv .venv --prompt '($1) '" >&2
+    virtualenv ".venv" --prompt "($1) "
+   
+    if [ "$?" -ne 0 ]; then
+        return $?
+    fi
+
+    echo "New VirtualEnv: Activated"
+    source ./.venv/bin/activate
+    return "$?"
+}
+
+
+
 # Alias definitions.
 # You may want to put all your additions into a separate file like
 # ~/.bash_aliases, instead of adding them here directly.
@@ -115,3 +142,5 @@ if ! shopt -oq posix; then
     . /etc/bash_completion
   fi
 fi
+
+alias esp_setup='. $HOME/esp/esp-idf/export.sh'
