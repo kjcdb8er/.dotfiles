@@ -1,0 +1,22 @@
+## Replace home directory zsh files with symlinks to files in .dotfiles
+## Any changes to these files will be version controled in the git dotfiles 
+
+report() { echo "$1" 1>&2 }
+
+# get root directory
+df_fir='pwd'
+
+[ -e ~/.zshrc ] || [ -h ~/.zshrc ] && mv ~/.zshrc ~/zshrc.old && report "Renamed '.zshrc' to 'zshrc.old"
+ln -s ~/.dotfiles/zsh/zshrc ~/.zshrc 
+report "Installed .zshrc"
+
+[ -e ~/.zsh_aliases ] || [ -h ~/.zsh_aliases ] && mv ~/.zsh_aliases ~/zsh_aliases.old && report "Renamed '.zsh_aliases' to 'zsh_aliases.old"
+[ -e ~/.dotfiles/zsh/zsh_aliases ] && ln -s~/.dotfiles/zsh/zsh_aliases ~/.zsh_aliases 
+
+[ -e ~/.zsh-aliases ] || [ -h ~/.zsh-aliases ] && mv ~/.zsh-aliases ~/zsh-aliases.old && report "Renamed '.zsh-aliases' to 'zsh-aliases.old"
+[ -e ~/.dotfiles/zsh/zsh_aliases ] && ln -s ~/.dotfiles/zsh/zsh-aliases ~/.zsh-aliases
+
+report "Installed .zsh_aliases"
+
+report "zsh-install complete"
+exit 0

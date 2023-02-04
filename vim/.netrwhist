@@ -1,0 +1,12 @@
+let g:netrw_dirhistmax  =10
+let g:netrw_dirhistcnt =8
+let g:netrw_dirhist_8='/home/jeff/bbb/Medic-Node-BBB/scripts/install'
+let g:netrw_dirhist_7='/home/jeff/bbb/Medic-Node-BBB/neospectra_mini/scripts/install'
+let g:netrw_dirhist_6='/home/jeff/esp/esp-idf/components/esp_websocket_client'
+let g:netrw_dirhist_5='/home/jeff/bbb/Medic-Node-BBB/neospectra_mini/scripts/install'
+let g:netrw_dirhist_4='/home/jeff/bbb/Medic-Node-BBB/system'
+let g:netrw_dirhist_3='/home/jeff/esp/Medic-Node-WiFi-Firmware/Medic-Transducer-Esp32-Firmware/main/ThirdParty/libhydrogen'
+let g:netrw_dirhist_2='/home/jeff/java/medic-life/scripts'
+let g:netrw_dirhist_1='/home/jeff/ti-processor-sdk-linux-am335x-evm-06.03.00.106/example-applications/pru-icss-5.6.0/examples/am335x/PRU_Hardware_UART'
+let g:netrw_dirhist_0='/home/jeff/bbb/Medic-Node-BBB/scripts'
+let g:netrw_dirhist_9='/home/jeff/bbb/Medic-Node-BBB/neospectra_mini/scripts/install'

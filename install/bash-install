@@ -1,15 +1,22 @@
 ## Replace home directory bash files with symlinks to files in .dotfiles
 ## Any changes to these files will be version controled in the git dotfiles 
 
+report() { echo "$1" 1>&2 }
+
 # get root directory
 df_fir='pwd'
 
-[ -e ~/.bashrc ] || [ -h ~/.bashrc ] && rm ~/.bashrc
+[ -e ~/.bashrc ] || [ -h ~/.bashrc ] && mv ~/.bashrc ~/bashrc.old && report "Renamed '.zshrc' to 'zshrc.old"
 ln -s ~/.dotfiles/bash/bashrc ~/.bashrc 
 echo "Installed .bashrc"
 
-[ -e ~/.bash_aliases ] || [ -h ~/.bash_aliases ] && rm ~/.bash_aliases
-ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
+[ -e ~/.bash_aliases ] || [ -h ~/.bash_aliases ] && mv ~/.bash_aliases ~/bash_aliases.old && report "Renamed '.bash_aliases' to 'bash_aliases.old"
+[ -e ~/.dotfiles/bash/bash_aliases ] && ln -s ~/.dotfiles/bash/bash_aliases ~/.bash_aliases
+
+[ -e ~/.bash-aliases ] || [ -h ~/.bash-aliases ] && mv ~/.bash-aliases ~/bash-aliases.old && report "Renamed '.bash-aliases' to 'bash-aliases.old"
+[ -e ~/.dotfiles/bash/bash-aliases ] && ln -s ~/.dotfiles/bash/bash-aliases ~/.bash-aliases
+
 echo "Installed .bash_aliases"
 
 echo "bash-install complete"
+exit 0
