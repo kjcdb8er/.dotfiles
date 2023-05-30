@@ -1,7 +1,9 @@
 ## Replace home directory zsh files with symlinks to files in .dotfiles
 ## Any changes to these files will be version controled in the git dotfiles 
 
-report() { echo "$1" 1>&2 }
+report() {
+    echo "$1" 1>&2
+}
 
 # get root directory
 df_fir='pwd'
