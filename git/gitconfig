@@ -1,4 +1,5 @@
 [alias]
+    ll = log --graph --decorate --pretty=format:'%C(auto)%h %C(cyan)%ad%C(reset) %C(auto)%d%C(reset) %s' --date=format:'%d/%m' --all
     lol = log --graph --decorate --pretty=oneline --abbrev-commit --all
     sm = submodule
     smu = submodule update
